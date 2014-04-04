@@ -22,13 +22,19 @@
 
   <div class="container">
     <div class="row">
-      Search: <input ng-model="places_query">   
+      Search: <input ng-model="placesQuery">   
+      <br>
+      Sort by:
+      <select ng-model="orderCriteria">
+        <option value="name">By name</option>
+        <option value="location">By location</option>
+      </select>
     </div>
 
     <ul>
-      <li ng-repeat="place in places | filter:places_query">
+      <li ng-repeat="place in places | filter:placesQuery | orderBy:orderCriteria">
         <h3>{{ place.name }}</h3>
-        place.location
+        {{ place.location }}
       </li>
     </ul>
   </div>
