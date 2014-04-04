@@ -13,15 +13,22 @@
   <script src="js/controllers.js"></script>
 </head>
 <body ng-controller="PlaceListCtrl">
-  Hack For Big Choices Workshop 
 
-  Welcome {{ 'guys' }}
+  <div class="container-fluid">
+    <div class="row-fluid">
+      <h2>Hack For Big Choices Workshop</h2>
+    </div>
+  </div>
 
-  <ul>
-    <li ng-repeat="place in places">
-      <h3>{{ place.name }}</h3>
-      place.location
-    </li>
-  </ul>
+  <div class="container">
+
+    <ul>
+      <li ng-repeat="place in places">
+        <h3>{{ place.name }}</h3>
+        place.location
+      </li>
+    </ul>
+  </div>
+  
 </body>
 </html>
