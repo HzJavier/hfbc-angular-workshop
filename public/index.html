@@ -21,9 +21,12 @@
   </div>
 
   <div class="container">
+    <div class="row">
+      Search: <input ng-model="places_query">   
+    </div>
 
     <ul>
-      <li ng-repeat="place in places">
+      <li ng-repeat="place in places | filter:places_query">
         <h3>{{ place.name }}</h3>
         place.location
       </li>
