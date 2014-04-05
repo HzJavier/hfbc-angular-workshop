@@ -2,3 +2,7 @@ nav img {
   float: left; 
   margin-right: 10px;
 }
+
+.place-ctrl .form-group{
+  margin-right: 20px; 
+}
