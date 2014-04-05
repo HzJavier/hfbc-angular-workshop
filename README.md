@@ -1,6 +1,6 @@
-# HACK FOR BIG CHOICES MX Workshop Starter
+# HACK FOR BIG CHOICES MX Workshop
 
-Code to start working on the HFBC MX workshop about AngularJS. 
+This is the finished code of the app for the HACK FOR BIG CHOICES MX workshop @ITESM.
 
 This is a node server that provides an API to read JSON files with sample data to use in the Angular demo app.
 
@@ -18,6 +18,11 @@ This will install:
 - Bower
 - Grunt
 - LESS
+
+### A note for all the participants
+
+The code for the components is now included in the repo, so there is no need to download any other files or to use bower. 
+Just clone or download all the files of this repo, run the server with node and you are done.
 
 ## Running the server
 
