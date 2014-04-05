@@ -11,7 +11,7 @@
 
     <ul>
       <li ng-repeat="place in places | filter:placesQuery | orderBy:orderCriteria">
-        <h3>{{ place.name }}</h3>
+        <h3><a href="#/place/{{ place.id }}">{{ place.name }}</a></h3>
         {{ place.location }}
       </li>
     </ul>

@@ -1,10 +1,12 @@
 {
   "places": [
     {
+      "id": 0,
       "name": "Home",
       "location": "Guadalajara"
     },
     {
+      "id": 1,
       "name": "ITESM",
       "location": "Zapopan"
     }
