@@ -40,5 +40,9 @@ app.controller('PlaceDetailCtrl', ['$scope', '$routeParams', '$http',
     $http.get('/api/places/' + $routeParams.placeId).success(function (data) {
       $scope.place = data;
     });
+
+    $scope.getLocation = function () {
+      alert('Location: ' + $scope.place.location);
+    };
   }
 ]);
