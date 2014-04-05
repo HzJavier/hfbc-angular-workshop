@@ -1,8 +1,19 @@
-<div class="container">
-  <button>
-    <a href="#/places">Show all</a>
+<div class="row">
+  <button class="btn btn-default">
+    <a href="#/places">Show All</a>
   </button>
+</div>
 
-  <h3>{{ place.name }}</h3>
-  <span ng-click="getLocation()">{{ place.location }}</span>
+<div class="container place-detail">
+  <div class="row">
+    <div class="col-md-4">
+      <h3>{{ place.name }}</h3>
+      <span ng-click="getLocation()">{{ place.location }}</span>
+    </div>
+    <div class="col-md-8">
+      <div class="map">
+        <img src="holder.js/400x400" alt="" holder-fix>
+      </div>
+    </div>
+  </div>
 </div>
