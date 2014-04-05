@@ -10,6 +10,10 @@ app.config(['$routeProvider',
         templateUrl: 'partials/list_view.html',
         controller: 'PlaceListCtrl'
       }).
+      when('/place/:placeId', {
+        templateUrl: 'partials/place_detail.html',
+        controller: 'PlaceDetailCtrl'
+      }).
       otherwise({
         redirectTo: '/places'
       });
@@ -28,3 +32,13 @@ app.controller('PlaceListCtrl', ['$scope', '$http',
     });
 
 }]);
+
+app.controller('PlaceDetailCtrl', ['$scope', '$routeParams', '$http',
+  function ($scope, $routeParams, $http) {
+    $scope.place;
+
+    $http.get('/api/places/' + $routeParams.placeId).success(function (data) {
+      $scope.place = data;
+    });
+  }
+]);
