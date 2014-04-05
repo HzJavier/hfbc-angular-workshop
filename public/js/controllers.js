@@ -1,8 +1,16 @@
+/**
+ * Creates our angular application
+ * - ngRoute is for template routing
+ * - placesControllers is the controller we created for all the other data
+ */
 var app = angular.module('workshopApp', [
   'ngRoute',
   'placesControllers' 
 ]);
 
+/**
+ * Configure the routes for the application
+ */
 app.config(['$routeProvider', 
   function ($routeProvider) {
     $routeProvider.
@@ -20,9 +28,14 @@ app.config(['$routeProvider',
   }
 ]);
 
-
+/**
+ * Our controller object for the views
+ */
 var placesControllers = angular.module('placesControllers', []);
 
+/**
+ * The controller for the list view
+ */
 app.controller('PlaceListCtrl', ['$scope', '$http',
   function ($scope, $http) {
     $scope.places = [];
@@ -33,6 +46,10 @@ app.controller('PlaceListCtrl', ['$scope', '$http',
 
 }]);
 
+/**
+ * The controller for the detail view
+ * This requires $routeParams to catch information from the url route.
+ */
 app.controller('PlaceDetailCtrl', ['$scope', '$routeParams', '$http',
   function ($scope, $routeParams, $http) {
     var domReady = false;
@@ -41,13 +58,21 @@ app.controller('PlaceDetailCtrl', ['$scope', '$routeParams', '$http',
 
     $scope.place;
 
+    /**
+     * If the template route is http://localhost:5000/index.html#/places/0
+     * then $routeParams.placeId = 0 and the api call will be /api/places/0
+     *
+     */
     $http.get('/api/places/' + $routeParams.placeId).success(function (data) {
       $scope.place = data;
       if (domReady) {
-        loadMap();
+        loadMap();  // Do not load the map until the dom is ready
       }
     });
 
+    /**
+     * Example of ng-click and other events from the dom
+     */
     $scope.getLocation = function () {
       alert('Location: ' + $scope.place.location);
     };
@@ -56,10 +81,13 @@ app.controller('PlaceDetailCtrl', ['$scope', '$routeParams', '$http',
     angular.element(mapDom).ready(function () {
       domReady = true;
       if ($scope.place) {
-        loadMap();
+        loadMap();    // Do not load the map until we get data form the server. What happens first
       }
     });
 
+    /**
+     * Creates a google map
+     */
     function loadMap() {
       latLng = new google.maps.LatLng($scope.place.lat, $scope.place.lng);
 
@@ -71,6 +99,9 @@ app.controller('PlaceDetailCtrl', ['$scope', '$routeParams', '$http',
       addMarker(latLng, map);
     }
 
+    /**
+     * Adds a marker to the map
+     */
     function addMarker (latLng, map) {
       var marker = new google.maps.Marker({
         position: latLng,
@@ -81,6 +112,10 @@ app.controller('PlaceDetailCtrl', ['$scope', '$routeParams', '$http',
   }
 ]);
 
+/**
+ * This directive is just to be able to use holder.js lib.
+ * Do not pay too much attention to this
+ */
 app.directive('holderFix', function () {
   return {
     link: function (scope, element, attrs) {
