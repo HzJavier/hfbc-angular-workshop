@@ -19,9 +19,9 @@
 
   <div class="container">
     <ul>
-      <li ng-repeat="place in places | filter:placesQuery | orderBy:orderCriteria">
+      <li class="place-list-item" ng-repeat="place in places | filter:placesQuery | orderBy:orderCriteria">
         <h3><a href="#/place/{{ place.id }}">{{ place.name }}</a></h3>
-        {{ place.location }}
+        <span>{{place.location}}</span>
       </li>
     </ul>
   </div>

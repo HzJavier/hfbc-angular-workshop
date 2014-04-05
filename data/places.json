@@ -2,13 +2,67 @@
   "places": [
     {
       "id": 0,
-      "name": "Home",
-      "location": "Guadalajara"
+      "name": "ITESM",
+      "location": "Zapopan",
+      "lat": "20.73305",
+      "lng": "-103.45488",
+      "category": "education"
     },
     {
       "id": 1,
-      "name": "ITESM",
-      "location": "Zapopan"
+      "name": "Ooyala MX",
+      "location": "Zapopan",
+      "lat": "20.71023",
+      "lng": "-103.41003",
+      "category": "technology"
+    },
+    {
+      "id": 2,
+      "name": "Los Cubos",
+      "location": "Guadalajara",
+      "lat": "20.67241",
+      "lng": "-103.42420",
+      "category": "outdoors"
+    },
+    {
+      "id": 3,
+      "name": "Hotel Riu",
+      "location": "Guadalajara",
+      "lat": "20.66028",
+      "lng": "-103.38308",
+      "category": "hotel"
+    },
+    {
+      "id": 4,
+      "name": "Abastos",
+      "location": "Guadalajara",
+      "lat": "20.65201",
+      "lng": "-103.38291",
+      "category": "business"
+    },
+    {
+      "id": 5,
+      "name": "Catedral",
+      "location": "Guadalajara",
+      "lat": "20.67739",
+      "lng": "-103.34678",
+      "category": "outdoors"
+    },
+    {
+      "id": 6,
+      "name": "Centro Medico",
+      "location": "Guadalajara",
+      "lat": "20.68558",
+      "lng": "-103.32995",
+      "category": "health"
+    },
+    {
+      "id": 7,
+      "name": "Auditorio Telmex",
+      "location": "Zapopan",
+      "lat": "20.73383",
+      "lng": "-103.38051",
+      "category": "recreation"
     }
   ]
 }

@@ -8,11 +8,17 @@
   <div class="row">
     <div class="col-md-4">
       <h3>{{ place.name }}</h3>
-      <span ng-click="getLocation()">{{ place.location }}</span>
+        <ul class="list-unstyled">
+          <li class="place-detail-list"><span>Id: </span> {{ place.id }} </li>
+          <li class="place-detail-list"><span>Name: </span> {{ place.name }} </li>
+          <li class="place-detail-list"><span>Location: </span> {{ place.location }} </li>
+          <li class="place-detail-list"><span>Latitude: </span> {{ place.lat }} </li>
+          <li class="place-detail-list"><span>Longitude: </span> {{ place.lng }} </li>
+          <li class="place-detail-list"><span>Category: </span> {{ place.category }} </li>
+        </ul>
     </div>
     <div class="col-md-8">
-      <div class="map">
-        <img src="holder.js/400x400" alt="" holder-fix>
+      <div id="map">
       </div>
     </div>
   </div>
