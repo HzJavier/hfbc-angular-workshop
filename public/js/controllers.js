@@ -1,4 +1,23 @@
-var app = angular.module('workshopApp', []);
+var app = angular.module('workshopApp', [
+  'ngRoute',
+  'placesControllers' 
+]);
+
+app.config(['$routeProvider', 
+  function ($routeProvider) {
+    $routeProvider.
+      when('/places', {
+        templateUrl: 'partials/list_view.html',
+        controller: 'PlaceListCtrl'
+      }).
+      otherwise({
+        redirectTo: '/places'
+      });
+  }
+]);
+
+
+var placesControllers = angular.module('placesControllers', []);
 
 app.controller('PlaceListCtrl', ['$scope', '$http',
   function ($scope, $http) {
