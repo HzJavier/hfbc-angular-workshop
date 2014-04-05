@@ -1,5 +1,5 @@
   <div class="row place-ctrl">
-    <form role="form" class="form-inline">
+    <form role="form" class="form-inline pull-right">
     
       <div class="form-group">
         <label for="">Search:</label>
@@ -18,10 +18,10 @@
   </div>
 
   <div class="container">
-    <ul>
-      <li class="place-list-item" ng-repeat="place in places | filter:placesQuery | orderBy:orderCriteria">
+      <div class="place-list-container col-md-4" ng-repeat="place in places | filter:placesQuery | orderBy:orderCriteria">
+        <div class="place-list-item">
         <h3><a href="#/place/{{ place.id }}">{{ place.name }}</a></h3>
         <span>{{place.location}}</span>
-      </li>
-    </ul>
+        </div>
+      </div>
   </div>
